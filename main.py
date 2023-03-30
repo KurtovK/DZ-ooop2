@@ -11,18 +11,24 @@ class Stadium:
         self.capacity = 0
 
     def display_info(self):
-        print("Name:", self.name)
-        print("Opening date:", self.opening_date)
-        print("Country:", self.country)
-        print("City:", self.city)
-        print("Capacity:", self.capacity)
+        print("Название:", self.name)
+        print("Дата открытия:", self.opening_date)
+        print("Страна:", self.country)
+        print("Город:", self.city)
+        print("Вместимость:", self.capacity)
 
 
 
 def execute_application():
     # Задание 2.
-    car1 = Car('Sorento', 2021, 'KIA', 2.5, 'красный', 4079900)
-    car1.display_info()
+    stadium = Stadium()
+    stadium.name = "Шинник"
+    stadium.opening_date = "1957"
+    stadium.country = "Россия"
+    stadium.city = "Ярослалвь"
+    stadium.capacity = 22990
+
+    stadium.display_info()
 
 
 
