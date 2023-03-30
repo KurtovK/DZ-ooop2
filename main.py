@@ -11,12 +11,11 @@ class Stadium:
         self.capacity = 0
 
     def display_info(self):
-        print('Модель:', self.model)
-        print('Год выпуска:', self.year)
-        print('Производитель:', self.manufacturer)
-        print('Объем двигателя:', self.engine_volume)
-        print('Цвет машины:', self.color)
-        print('Цена:', self.price)
+        print("Name:", self.name)
+        print("Opening date:", self.opening_date)
+        print("Country:", self.country)
+        print("City:", self.city)
+        print("Capacity:", self.capacity)
 
 
 
