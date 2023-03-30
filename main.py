@@ -22,7 +22,9 @@ class Car:
 
 
 def execute_application():
-    pass
+    # Задание 1.
+    car1 = Car('Sorento', 2021, 'KIA', 2.5, 'красный', 4079900)
+    car1.display_info()
 
 
 
