@@ -11,6 +11,14 @@ class Car:
         self.color = color
         self.price = price
 
+    def display_info(self):
+        print('Модель:', self.model)
+        print('Год выпуска:', self.year)
+        print('Производитель:', self.manufacturer)
+        print('Объем двигателя:', self.engine_volume)
+        print('Цвет машины:', self.color)
+        print('Цена:', self.price)
+
 
 
 def execute_application():
