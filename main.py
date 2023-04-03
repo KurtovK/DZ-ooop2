@@ -1,23 +1,32 @@
+from typing import Dict
 #Задание 1.
 #Реализуйте класс «Автомобиль». Необходимо хранить в полях класса:
 #название модели, год выпуска, производителя, объем двигателя, цвет машины,
 #цену. Реализуйте конструктор по умолчанию и метод для вывода данных.
 class Car:
-    def __init__(self, model='', year=0, manufacturer='', engine_volume=0, color='', price=0):
+    model: str
+    year: int
+    manufacturer: str
+    engine_volume: float
+    color: str
+    price: float
+    def __init__(self, model: str, year: int,manufacturer: str,
+                 engine_volume: float, color: str, price: float):
+        self.manufacturer = manufacturer
         self.model = model
         self.year = year
-        self.manufacturer = manufacturer
         self.engine_volume = engine_volume
         self.color = color
         self.price = price
 
-    def display_info(self):
-        print('Модель:', self.model)
-        print('Год выпуска:', self.year)
-        print('Производитель:', self.manufacturer)
-        print('Объем двигателя:', self.engine_volume)
-        print('Цвет машины:', self.color)
-        print('Цена:', self.price)
+
+    def __str__(self):
+        return f"Модель: {self.model}\n" \
+               f"Год выпуска: {self.year}\n" \
+               f"Производитель: {self.manufacturer}\n"\
+               f"Объем двигателя: {self.engine_volume}\n" \
+               f"Цвет машины: {self.color}\n" \
+               f"Цена: {self.price}\n"
 
 
 
@@ -27,42 +36,37 @@ class Car:
 #название стадиона, дату открытия, страну, город, вместимость. Реализуйте
 #конструктор по умолчанию и метод для вывода данных.
 class Stadium:
-    def __init__(self):
-        self.name = ""
-        self.opening_date = ""
-        self.country = ""
-        self.city = ""
-        self.capacity = 0
+    name: str
+    opening_date: Dict[str, str]
+    country: str
+    city: str
+    capacity: int
 
-    def display_info(self):
-        print("Название:", self.name)
-        print("Дата открытия:", self.opening_date)
-        print("Страна:", self.country)
-        print("Город:", self.city)
-        print("Вместимость:", self.capacity)
+    def __init__(self, name: str, opening_date: Dict[str, str], country: str, city:str, capacity: int):
+        self.name = name
+        self.opening_date = opening_date
+        self.country = country
+        self.city = city
+        self.capacity = capacity
+
+    def __str__(self):
+        return f"Название: {self.name}\n"\
+               f"Дата открытия:{self.opening_date}\n"\
+               f"Страна: {self.country}\n"\
+               f"Город:{self.city}\n"\
+               f"Вместимость:{self.capacity}\n"
+
 
 
 
 def execute_application():
-
     # Задание 1.
     car1 = Car('Sorento', 2021, 'KIA', 2.5, 'красный', 4079900)
-    car1.display_info()
-
+    print(car1)
+    print()
 
     # Задание 2.
-    stadium = Stadium()
-    stadium.name = "Шинник"
-    stadium.opening_date = "1957"
-    stadium.country = "Россия"
-    stadium.city = "Ярослалвь"
-    stadium.capacity = 22990
-
-    stadium.display_info()
-
-
-
-
-
+    stadium = Stadium('Шинник', {'день': '01', 'месяц': '01', 'год': '1957'}, 'Россия', 'Ярославль', 22990)
+    print(stadium)
 if __name__=="__main__":
     execute_application()
